@@ -1,0 +1,26 @@
+{
+  "Books": [
+    {
+      "title": "Famous Five",
+      "author": "Enid Blyton",
+      "isbn": "7766-4433-9643-4765",
+      "publicationDate": "21/09/1877",
+      "publisher": "Penguin",
+      "price": "1999/-",
+      "genre": "Fiction",
+      "format": "pdf",
+      "id": 5
+    },
+    {
+      "title": "Hardy Boys",
+      "author": "Franklin W. Dixon",
+      "isbn": "1223-6463-9543-4987",
+      "publicationDate": "21/02/1977",
+      "publisher": "Penguin",
+      "price": "999/-",
+      "genre": "Mystery",
+      "format": "pdf",
+      "id": 6
+    }
+  ]
+}

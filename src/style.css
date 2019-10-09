@@ -1,0 +1,93 @@
+h1, p {
+    font-family: Lato;
+  }
+  .navbar-dark
+  {
+      background-color: #1a1129;
+  }
+  .bg-dark
+  {
+      background-color: #291150
+  }
+  #hey
+  {
+    margin-top: 70px;
+  }
+  #now
+  {
+    margin-top: 75px;
+  }
+  #myBox
+  {
+    margin: 100px;
+  }
+  .card{
+  
+    border-radius: 30px;
+    background-color: beige;
+    width:300px;
+    border-block-end-color: #1a1129;
+    border-block-end-width: 10px;
+    margin-bottom: 20px;
+  }
+  #backy
+  {
+    display: inline-block;
+  }
+  #main{
+    display:inline-block;
+  }
+  .search {
+    width: 120%;
+    margin-top: 5px;
+    margin-left: 20px;
+    padding-left: 10px;
+    background-color: beige;
+    border-radius: 10px;
+  }
+  #Genre {
+    width: 75%;
+    margin-top: 5px;
+    padding: 10px;
+    background-color: beige;
+    border-radius: 10px;
+  }
+  #format {
+    width: 75%;
+    margin-top: 5px;
+    padding: 10px;
+    background-color: beige;
+    border-radius: 10px;
+  }
+  #main
+  {
+    display: inline-block;
+  }
+  #addButton
+  {
+    background-color: #3330e7;
+    border-radius: 15px;
+  }
+  #deleteButton
+  {
+    background-color: rgb(255, 0, 0);
+    margin-left:100px;
+    font-style: sans-serif;
+    font-size: 15px;
+    border-radius: 15px;
+  }
+  #updateButton
+  {
+    background-color:#0ea515;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 15px;
+    font-style: sans-serif;
+    font-size: 15px;
+  }
+  .footer
+  {
+    background-color: antiquewhite;
+    padding-left: 30px;
+    margin-left: 0%;
+  }
+  
