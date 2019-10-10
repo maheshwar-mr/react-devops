@@ -18,7 +18,7 @@
     "react-scripts": "3.0.1",
     "reactstrap": "^8.0.1",
     "redux": "^4.0.4",
-    "mocha-junit-reporter: ^6.2.1"
+    "mocha-junit-reporter": "^6.2.1"
   },
   "scripts": {
     "start": "PORT=3000 react-scripts start",
