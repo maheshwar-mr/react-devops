@@ -21,7 +21,7 @@
   },
   "scripts": {
     "start": "PORT=3000 react-scripts start",
-    "start-forever": "forever dev",
+    "start-forever": "pm2 start dev",
     "dev": "json-server --watch ss.json --host 0.0.0.0 --port 3001 & npm start",
     "build": "react-scripts build",
     "test": "react-scripts test",
