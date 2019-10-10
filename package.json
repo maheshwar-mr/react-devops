@@ -21,7 +21,7 @@
     "mocha-junit-reporter": "^6.2.1"
   },
   "scripts": {
-    "start": "PORT=3000 react-scripts start",
+    "start": "react-scripts start",
     "dev": "json-server --watch ss.json --host 0.0.0.0 --port 3001 & npm start",
     "build-serve": "json-server --watch ss.json --host 0.0.0.0 --port 3001 & serve -s build -l 3000",
     "build": "react-scripts build",
