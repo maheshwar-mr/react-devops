@@ -3,6 +3,11 @@ pipeline {
     agent any
     tools {nodejs "Books"}
     stages {
+      stage('Echo'){
+        steps{
+          echo "Testing Webhook"
+        }
+      }
       stage('Install Node Modules') {
             steps {
                 sh 'npm install'
