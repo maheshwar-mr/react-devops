@@ -23,10 +23,5 @@ pipeline {
                 sh 'pm2 start npm -- run build-serve'
             }
         }
-        stage('Test') {
-            steps {
-                sh 'npm run test'
-            }
-        }
     }
 }
