@@ -44,5 +44,10 @@
   },
   "devDependencies": {
     "concurrently": "^5.0.0"
+    "@babel/preset-env": "latest",
+    "@babel/preset-react": "latest",
+    "babel-jest": "latest",
+    "jest": "latest",
+    "react-test-renderer": "latest"
   }
 }
