@@ -25,7 +25,7 @@
     "dev": "npm start",
     "json-serve": "json-server --watch ss.json --host 0.0.0.0 --port 3001",
     "build-serve": "json-server --watch ss.json --host 0.0.0.0 --port 3001 & serve -s build -l 3000",
-    "test": "jest",
+    "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
