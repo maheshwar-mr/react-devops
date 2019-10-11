@@ -2,6 +2,11 @@
 pipeline {
     agent any
     stages {
+      stage('Install Node Modules') {
+            steps {
+                sh 'npm install'
+            }
+        }
         stage('Kill Processes') {
             steps {
                 sh 'pm2 kill'
