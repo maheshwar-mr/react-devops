@@ -5,6 +5,6 @@
     "append": true,
     "watch": true,
     "script": "ss.json",
-    "args": ["--port", "3001"]
+    "args": ["--port", "3001", "--host", "0.0.0.0"]
   }
 ]
