@@ -20,7 +20,7 @@ pipeline {
         }
       stage('Serve') {
             steps {
-                sh 'pm2 start npm -- run build-serve'
+                sh 'pm2 start npm -- run build-serve --watch'
             }
         }
       stage('Test') {
