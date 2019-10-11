@@ -18,6 +18,11 @@ pipeline {
                 sh 'npm run build'
             }
         }
+      stage('Start Json-Server'){
+        steps{
+         sh 'pm2 start npm -- run json-serve --watch'
+        }
+      }
       stage('Serve') {
             steps {
                 sh 'pm2 start npm -- run build-serve --watch'
