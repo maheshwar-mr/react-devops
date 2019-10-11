@@ -1,6 +1,7 @@
   
 pipeline {
     agent any
+    tools {nodejs "Books"}
     stages {
       stage('Install Node Modules') {
             steps {
