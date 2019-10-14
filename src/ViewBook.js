@@ -45,20 +45,17 @@ class ViewBook extends Component{
   }
 
 
-  async componentWillMount()
+  componentWillMount()
   {
-          try{
-            axios.get('http://18.220.181.147:3001/Books').then(
-              (response)=>{
-              this.setState({ Books:response.data})
-              })
-          }
-          catch(error){
-                  console.log(error);
-          }
+    axios.get('http://18.220.181.147:3001/Books').then(
+      (response)=>{
+      this.setState({ Books:response.data})
+      })
+  }
+
   }
   
-  async componentWillUnmount() {
+  componentWillUnmount() {
     clearInterval(this.state);
   }
 
@@ -79,7 +76,7 @@ class ViewBook extends Component{
     axios.post('http://18.220.181.147:3001/Books',this.state.addBookDetails).then((response)=>
     {
       let{Books}=this.state;
-      Books.push(response.data);
+      Books.push(response.data).catch();
       this.setState(
         {
           Books,checkNew:false,
@@ -103,7 +100,7 @@ class ViewBook extends Component{
   {
     axios.delete('http://18.220.181.147:3001/Books/' +id).then((response)=>
     {
-      this._refreshBooks();
+      this._refreshBooks().catch();
     })
   }
 
@@ -145,7 +142,7 @@ class ViewBook extends Component{
           genre:'',
           format:''
         }
-      })
+      }).catch()
     });
   }
     
@@ -188,7 +185,7 @@ class ViewBook extends Component{
       this.setState({
       Books:response.data
       })
-    })
+    }).catch()
   }
 
 
