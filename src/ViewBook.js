@@ -205,7 +205,7 @@ class ViewBook extends Component{
     {
       return(
         
-        <div id="main" key="id">
+        <div id="main" key={item.id}>
           <div className="container">
             <div className="card" id="now">
               <div className="card-body" >
