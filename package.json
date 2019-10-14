@@ -26,7 +26,7 @@
     "json-serve": "json-server --watch ss.json --host 0.0.0.0 --port 3001",
     "build-serve": "json-server --watch ss.json --host 0.0.0.0 --port 3001 & serve -s build -l 3000",
     "eject": "react-scripts eject",
-    "test": "react-scripts test",
+    "test": "react-scripts test --watchAll",
     "test:ci": "react-scripts test --env=jsdom --testResultsProcessor ./node_modules/jest-junit --coverage --coverageDirectory=coverage",
     "coverage": "react-scripts test --env=jsdom --coverage"
   },
