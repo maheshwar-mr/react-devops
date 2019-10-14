@@ -50,13 +50,9 @@ class ViewBook extends Component{
     axios.get('http://18.220.181.147:3001/Books').then(
       (response)=>{
       this.setState({ Books:response.data})
-      })
+      }).catch()
   }
 
-  }
-  
-  componentWillUnmount() {
-    clearInterval(this.state);
   }
 
   togglecheckNew() 
@@ -76,7 +72,7 @@ class ViewBook extends Component{
     axios.post('http://18.220.181.147:3001/Books',this.state.addBookDetails).then((response)=>
     {
       let{Books}=this.state;
-      Books.push(response.data).catch();
+      Books.push(response.data);
       this.setState(
         {
           Books,checkNew:false,
@@ -92,7 +88,7 @@ class ViewBook extends Component{
               format:''
             },
         });
-    });
+    }).catch();
   }
 
 
