@@ -51,5 +51,6 @@
     "babel-jest": "latest",
     "jest": "latest",
     "react-test-renderer": "latest"
+    "jest-junit":"latest"
   }
 }
