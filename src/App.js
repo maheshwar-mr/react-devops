@@ -3,7 +3,6 @@ import {BrowserRouter} from "react-router-dom"
 import { Switch, Route, Redirect } from 'react-router-dom';
 import ViewBook from "./ViewBook"
 import Header from "./Header"
-import AddBook from "./AddBook"
 
 
 class App extends Component {
@@ -18,10 +17,7 @@ class App extends Component {
   render() {
     const view=() =>{
       return (<ViewBook />)}
-      function add()
-      {
-        return(<AddBook/>)
-      }
+    
 
     return (
       <div>
@@ -29,7 +25,7 @@ class App extends Component {
         <div className="container">
           <Switch>
             <Route path="/viewbook" component={view}/>
-            <Route path="/addbook" component={add}/>
+          
             <Redirect to="/viewbook" />
           </Switch>
         </div>
