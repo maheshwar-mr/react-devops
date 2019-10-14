@@ -47,7 +47,7 @@ class ViewBook extends Component{
 
   componentWillMount()
   {
-    axios.get('http://localhost:3003/Books').then(
+    axios.get('http://18.220.181.147:3001/Books').then(
       (response)=>{
       this.setState({ Books:response.data})
       }).catch();
@@ -68,7 +68,7 @@ class ViewBook extends Component{
 
   addBook()
   {
-    axios.post('http://localhost:3003/Books', this.state.addBookDetails).then((response)=>
+    axios.post('http://18.220.181.147:3001/Books', this.state.addBookDetails).then((response)=>
     {
       let{Books}=this.state;
       Books.push(response.data);
@@ -93,7 +93,7 @@ class ViewBook extends Component{
 
   deleteBook(id)
   {
-    axios.delete('http://localhost:3003/Books/' +id).then((response)=>
+    axios.delete('http://18.220.181.147:3001/Books/' +id).then((response)=>
     {
       this._refreshBooks();
     }).catch();
@@ -113,7 +113,7 @@ class ViewBook extends Component{
       genre,
       format
     }=this.state.editBookDetails;
-    axios.put('http://localhost:3003/Books/' +this.state.editBookDetails.id,
+    axios.put('http://18.220.181.147:3001/Books/' +this.state.editBookDetails.id,
     {
       title,
       author,
@@ -175,7 +175,7 @@ class ViewBook extends Component{
 
   _refreshBooks()
   {
-    axios.get('http://localhost:3003/Books').then((response)=>
+    axios.get('http://18.220.181.147:3001/Books').then((response)=>
     {
       this.setState({
       Books:response.data
