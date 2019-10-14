@@ -244,9 +244,9 @@ class ViewBook extends Component{
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="Navbar">
-            <a className="navbar-brand mr-auto" href="#"><span class="fa fa-user-circle"></span>  REACT BOOK LIBRARY</a>
+            <a className="navbar-brand mr-auto" href="#"><span className="fa fa-user-circle"></span>  REACT BOOK LIBRARY</a>
               <ul className="navbar-nav ml-auto">
-                <li className="nav-item active"><a class="nav-link" href="/viewbook"><span class="fa fa-home fa-lg"></span> View Book</a></li>
+                <li className="nav-item active"><a className="nav-link" href="/viewbook"><span className="fa fa-home fa-lg"></span> View Book</a></li>
                 <Button id="addButton" onClick={this.togglecheckNew.bind(this)}>Add book</Button>
                   <div>
                     <input
@@ -456,9 +456,9 @@ class ViewBook extends Component{
                     </div>
                     <div className="col-12 col-sm-4 align-self-center">
                         <div className="text-center">
-                            <a className="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id="><i class="fa fa-facebook"></i></a>
-                            <a className="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"><i class="fa fa-linkedin"></i></a>
-                            <a className="btn btn-social-icon" href="mailto:"><i class="fa fa-envelope-o"></i></a>
+                            <a className="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id="><i className="fa fa-facebook"></i></a>
+                            <a className="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"><i className="fa fa-linkedin"></i></a>
+                            <a className="btn btn-social-icon" href="mailto:"><i className="fa fa-envelope-o"></i></a>
                         </div>
                     </div>
                 </div>
