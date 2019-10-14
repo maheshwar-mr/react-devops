@@ -53,6 +53,9 @@ class ViewBook extends Component{
       })
   }
   
+  componentWillUnmount() {
+    clearInterval(this.state);
+  }
 
   togglecheckNew() 
   {
