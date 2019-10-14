@@ -25,8 +25,10 @@
     "dev": "npm start",
     "json-serve": "json-server --watch ss.json --host 0.0.0.0 --port 3001",
     "build-serve": "json-server --watch ss.json --host 0.0.0.0 --port 3001 & serve -s build -l 3000",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "test": "react-scripts-ts test --env=jsdom",
+    "test:ci": "react-scripts-ts test --env=jsdom --testResultsProcessor ./node_modules/jest-junit --coverage --coverageDirectory=coverage",
+    "coverage": "react-scripts-ts test --env=jsdom --coverage"
   },
   "eslintConfig": {
     "extends": "react-app"
