@@ -47,13 +47,12 @@ class ViewBook extends Component{
 
   componentWillMount()
   {
-    axios.get('http://18.220.181.147:3001/Books').then(
+    axios.get('http://localhost:3003/Books').then(
       (response)=>{
       this.setState({ Books:response.data})
-      }).catch()
+      }).catch();
   }
-
-  }
+  
 
   togglecheckNew() 
   {
@@ -69,7 +68,7 @@ class ViewBook extends Component{
 
   addBook()
   {
-    axios.post('http://18.220.181.147:3001/Books',this.state.addBookDetails).then((response)=>
+    axios.post('http://localhost:3003/Books', this.state.addBookDetails).then((response)=>
     {
       let{Books}=this.state;
       Books.push(response.data);
@@ -94,10 +93,10 @@ class ViewBook extends Component{
 
   deleteBook(id)
   {
-    axios.delete('http://18.220.181.147:3001/Books/' +id).then((response)=>
+    axios.delete('http://localhost:3003/Books/' +id).then((response)=>
     {
-      this._refreshBooks().catch();
-    })
+      this._refreshBooks();
+    }).catch();
   }
 
 
@@ -114,7 +113,7 @@ class ViewBook extends Component{
       genre,
       format
     }=this.state.editBookDetails;
-    axios.put('http://18.220.181.147:3001/Books/' +this.state.editBookDetails.id,
+    axios.put('http://localhost:3003/Books/' +this.state.editBookDetails.id,
     {
       title,
       author,
@@ -138,8 +137,8 @@ class ViewBook extends Component{
           genre:'',
           format:''
         }
-      }).catch()
-    });
+      })
+    }).catch();
   }
     
   
@@ -176,12 +175,12 @@ class ViewBook extends Component{
 
   _refreshBooks()
   {
-    axios.get('http://18.220.181.147:3001/Books').then((response)=>
+    axios.get('http://localhost:3003/Books').then((response)=>
     {
       this.setState({
       Books:response.data
       })
-    }).catch()
+    }).catch();
   }
 
 
@@ -206,7 +205,7 @@ class ViewBook extends Component{
     {
       return(
         
-        <div id="main" key={item.id}>
+        <div id="main">
           <div className="container">
             <div className="card" id="now">
               <div className="card-body" >
@@ -245,9 +244,9 @@ class ViewBook extends Component{
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="Navbar">
-            <a className="navbar-brand mr-auto" href="#"><span className="fa fa-user-circle"></span>  REACT BOOK LIBRARY</a>
+            <a className="navbar-brand mr-auto" href="#"><span class="fa fa-user-circle"></span>  REACT BOOK LIBRARY</a>
               <ul className="navbar-nav ml-auto">
-                <li className="nav-item active"><a className="nav-link" href="/viewbook"><span className="fa fa-home fa-lg"></span> View Book</a></li>
+                <li className="nav-item active"><a class="nav-link" href="/viewbook"><span class="fa fa-home fa-lg"></span> View Book</a></li>
                 <Button id="addButton" onClick={this.togglecheckNew.bind(this)}>Add book</Button>
                   <div>
                     <input
@@ -457,9 +456,9 @@ class ViewBook extends Component{
                     </div>
                     <div className="col-12 col-sm-4 align-self-center">
                         <div className="text-center">
-                            <a className="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id="><i className="fa fa-facebook"></i></a>
-                            <a className="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"><i className="fa fa-linkedin"></i></a>
-                            <a className="btn btn-social-icon" href="mailto:"><i className="fa fa-envelope-o"></i></a>
+                            <a className="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id="><i class="fa fa-facebook"></i></a>
+                            <a className="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"><i class="fa fa-linkedin"></i></a>
+                            <a className="btn btn-social-icon" href="mailto:"><i class="fa fa-envelope-o"></i></a>
                         </div>
                     </div>
                 </div>
