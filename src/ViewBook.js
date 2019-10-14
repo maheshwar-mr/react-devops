@@ -45,7 +45,7 @@ class ViewBook extends Component{
   }
 
 
-  componentWillMount()
+  async componentWillMount()
   {
           try{
             axios.get('http://18.220.181.147:3001/Books').then(
@@ -58,7 +58,7 @@ class ViewBook extends Component{
           }
   }
   
-  componentWillUnmount() {
+  async componentWillUnmount() {
     clearInterval(this.state);
   }
 
