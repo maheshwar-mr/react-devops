@@ -47,10 +47,15 @@ class ViewBook extends Component{
 
   componentWillMount()
   {
-    axios.get('http://18.220.181.147:3001/Books').then(
-      (response)=>{
-      this.setState({ Books:response.data})
-      })
+          try{
+            axios.get('http://18.220.181.147:3001/Books').then(
+              (response)=>{
+              this.setState({ Books:response.data})
+              })
+          }
+          catch(error){
+                  console.log(error);
+          }
   }
   
   componentWillUnmount() {
