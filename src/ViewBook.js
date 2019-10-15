@@ -47,10 +47,15 @@ class ViewBook extends Component{
 
   componentWillMount()
   {
+          try{
     axios.get('http://18.218.167.99:3001/Books').then(
       (response)=>{
       this.setState({ Books:response.data})
-      }).catch();
+      })
+          }
+          catch(error){
+          console.log(error);
+          }
   }
   
 
@@ -68,6 +73,7 @@ class ViewBook extends Component{
 
   addBook()
   {
+          try{
     axios.post('http://18.218.167.99:3001/Books', this.state.addBookDetails).then((response)=>
     {
       let{Books}=this.state;
@@ -87,16 +93,24 @@ class ViewBook extends Component{
               format:''
             },
         });
-    }).catch();
+    });
+          }
+          catch(error){
+          console.log(error);
+          }
   }
 
 
   deleteBook(id)
   {
+          try{
     axios.delete('http://18.218.167.99:3001/Books/' +id).then((response)=>
     {
       this._refreshBooks();
-    }).catch();
+    });}
+          catch(error){
+          console.log(error);
+          }
   }
 
 
@@ -113,6 +127,7 @@ class ViewBook extends Component{
       genre,
       format
     }=this.state.editBookDetails;
+          try{
     axios.put('http://18.218.167.99:3001/Books/' +this.state.editBookDetails.id,
     {
       title,
@@ -138,7 +153,10 @@ class ViewBook extends Component{
           format:''
         }
       })
-    }).catch();
+    });}
+          catch(error){
+          console.log(error);
+          }
   }
     
   
@@ -175,12 +193,16 @@ class ViewBook extends Component{
 
   _refreshBooks()
   {
+          try{
     axios.get('http://18.218.167.99:3001/Books').then((response)=>
     {
       this.setState({
       Books:response.data
       })
-    }).catch();
+    });}
+          catch(error){
+          console.log(error);
+          }
   }
 
 
