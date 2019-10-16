@@ -55,6 +55,7 @@ class ViewBook extends Component{
           }
           catch(error){
           console.log(error);
+          process.exit(0);
           }
   }
   
@@ -97,6 +98,7 @@ class ViewBook extends Component{
           }
           catch(error){
           console.log(error);
+          process.exit(0);
           }
   }
 
@@ -110,6 +112,7 @@ class ViewBook extends Component{
     });}
           catch(error){
           console.log(error);
+          process.exit(0);
           }
   }
 
@@ -156,6 +159,7 @@ class ViewBook extends Component{
     });}
           catch(error){
           console.log(error);
+          process.exit(0);
           }
   }
     
@@ -202,6 +206,7 @@ class ViewBook extends Component{
     });}
           catch(error){
           console.log(error);
+          process.exit(0);
           }
   }
 
