@@ -2,16 +2,16 @@ pipeline {
     agent any
     tools {nodejs "Books"}
     stages {
-      stage('Install Node Modules') {
-            steps {
-                sh 'npm install'
-            }
-        }
-        stage('Kill Processes') {
+     // stage('Install Node Modules') {
+           // steps {
+               // sh 'npm install'
+           // }
+       // }
+        /*stage('Kill Processes') {
             steps {
                 sh 'pm2 kill'
             }
-        }
+        }*/
          stage('Build') {
             steps {
                 sh 'npm run build'
