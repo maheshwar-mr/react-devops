@@ -21,7 +21,7 @@ pipeline {
             steps{
                sh 'cd /var/lib/jenkins/workspace/React_Pipeline/'
                sh 'zip build.zip build'
-               sh 'curl --upload-file -v "http://18.224.155.110:8081/nexus/devopstraining/Hexgon_React"'
+               sh 'curl --upload-file "http://18.224.155.110:8081/nexus/devopstraining/Hexgon_React"'
             }
         }
       /*stage('Serve') {
