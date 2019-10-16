@@ -11,12 +11,12 @@ pipeline {
             steps {
                 sh 'pm2 kill'
             }
-        }
+        }*/
          stage('Build') {
             steps {
                 sh 'npm run build'
             }
-        }*/
+        }
         stage('Artifact Upload'){
             steps{
                sh 'cd /var/lib/jenkins/workspace/React_Pipeline/'
