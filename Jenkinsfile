@@ -17,6 +17,11 @@ pipeline {
                 sh 'npm run build'
             }
         }
+        stage('Artifact Upload'){
+            steps{
+               sh ''
+            }
+        }
       stage('Serve') {
             steps {
                 sh 'pm2 start npm -- run build-serve --watch'
