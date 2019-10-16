@@ -19,9 +19,9 @@ pipeline {
         }*/
         stage('Artifact Upload'){
             steps{
-               sh 'cd /var/lib/jenkins/workspace/React_Pipeline/build'
-               sh 'zip build.zip build'
-               sh 'curl --upload-file --url http://18.224.155.110:8081/nexus/devopstraining/Hexgon_React'
+               sh 'cd /var/lib/jenkins/workspace/React_Pipeline/'
+               sh 'zip -r build.zip build/'
+               //sh 'curl --upload-file --url http://18.224.155.110:8081/nexus/devopstraining/Hexgon_React'
             }
         }
       /*stage('Serve') {
