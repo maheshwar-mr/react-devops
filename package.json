@@ -65,6 +65,11 @@
     "enzyme-adapter-react-16": "latest",
     "eslint": "^5.16.0",
     "eslint-plugin-react": "latest"
+  },
+  {
+  "jest": {
+    "testResultsProcessor": "jest-sonar-reporter"
   }
+}
  
 }
