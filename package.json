@@ -53,6 +53,21 @@
     "babel-jest": "latest",
     "jest": "24.7.1",
     "react-test-renderer": "latest",
-    "jest-junit": "latest"
+    "jest-junit": "latest",
+    "enzyme": "latest",
+    "enzyme-adapter-react-16": "latest",
+    "eslint": "latest",
+    "eslint-plugin-react": "latest"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/*.{js,jsx}",
+      "!**/node_modules/**",
+      "!build/**"
+      ],
+    "coverageReporters":[
+      "lcov",
+      "text"
+      ]
   }
 }
