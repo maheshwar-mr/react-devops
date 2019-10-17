@@ -15,9 +15,9 @@ pipeline {
          stage('Build') {
             steps {
                 sh 'npm run build'
-                def readJSON = readJSON file:'package.json'
-                def version = readJSON.version
-                echo $version
+                sh def readJSON = readJSON file:'package.json'
+                sh def version = readJSON.version
+                sh echo $version
             }
         }
         stage('Artifact Upload'){
