@@ -33,6 +33,11 @@
   "eslintConfig": {
     "extends": "react-app"
   },
+  "nyc": {
+    "extends": "@istanbuljs/nyc-config-typescript",
+    "all": true,
+    "check-coverage": true
+  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -50,13 +55,13 @@
     "@babel/preset-env": "latest",
     "@babel/preset-react": "latest",
     "jenkins-mocha": "latest",
+    "mocha": "latest",
     "@babel/plugin-proposal-class-properties": "latest",
     "babel-jest": "latest",
     "jest": "24.7.1",
     "nyc": "latest",
     "react-test-renderer": "latest",
     "jest-junit": "latest",
-    "istanbuljs": "latest",
     "enzyme": "latest",
     "enzyme-adapter-react-16": "latest",
     "eslint": "^5.16.0",
