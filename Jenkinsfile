@@ -14,7 +14,7 @@ pipeline {
         }*/
          stage('Build') {
             steps {
-                sh 'npm run build'
+                sh 'npm run build & npm version patch'
             }
         }
         stage('Artifact Upload'){
