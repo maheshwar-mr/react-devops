@@ -26,7 +26,7 @@
     "json-serve": "json-server --watch ss.json --host 0.0.0.0 --port 3001",
     "build-serve": "json-server --watch ss.json --host 0.0.0.0 --port 3001 & serve -s build -l 3000",
     "eject": "react-scripts eject",
-    "test" : "CI=true jenkins-mocha test",
+    "test" : "CI=true react-scripts test",
     "test:ci": "react-scripts test --env=jsdom",
     "coverage": "react-scripts test --env=jsdom --coverage"
   },
