@@ -66,17 +66,5 @@
     "eslint": "^5.16.0",
     "eslint-plugin-react": "latest"
   },
-  "jest": {
-  "collectCoverage":true,
-  "collectCoverageFrom": [	
-    "**/*.{js,jsx}",	
-    "!**/node_modules/**",	
-    "!**/build/**",	
-  ],	
-  "coverageReporters": [	
-    "lcov",	
-    "text"	
-  ]	
-},
  
 }
