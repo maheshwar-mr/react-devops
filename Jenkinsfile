@@ -20,8 +20,8 @@ pipeline {
         }
         stage('Read FIle'){
             steps{
-             def readJSON = readJSON file:'package.json'
-             def version = readJSON.version
+             export readJSON = readJSON file:'package.json'
+             export version = readJSON.version
              echo $version
             }
         }
