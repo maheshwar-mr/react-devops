@@ -7,32 +7,18 @@ pipeline {
                // sh 'npm install'
            // }
        // }
-        /*stage('Kill Processes') {
-            steps {
-                sh 'pm2 kill'
-            }
-        }*/
          stage('Build') {
             steps {
                 sh 'npm run build'
                
             }
         }
-        /*stage('Read FIle'){
-            steps{
-             //export readjSON = readFile file:'package.json'
-             export version = jq .
-             echo $version
-            }
-        }*/
         stage('Artifact Upload'){
             steps{
                sh 'cd /var/lib/jenkins/workspace/React_Pipeline/'
-               sh 'export temp=$[temp+1]'
-               //sh 'mkdir $temp/'
-               sh 'zip -r $temp.zip build/'
+               sh 'zip -r $BUILD_NUMBER.zip build/'
                withCredentials([usernamePassword(credentialsId:'Nexus_Credentials',usernameVariable:'username',passwordVariable:'password')]){
-               sh 'curl -v -u $username:$password --upload-file $temp.zip http://18.224.155.110:8081/nexus/content/repositories/devopstraining/hexagon6/'
+               sh 'curl -v -u $username:$password --upload-file $BUILD_NUMBER.zip http://18.224.155.110:8081/nexus/content/repositories/devopstraining/hexagon6/'
                 }
             }
         }
