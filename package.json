@@ -54,7 +54,6 @@
     "babel-jest": "latest",
     "jest": "24.7.1",
     "nyc": "latest",
-    "instanbul": "latest",
     "react-test-renderer": "latest",
     "jest-junit": "latest",
     "enzyme": "latest",
