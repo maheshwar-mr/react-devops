@@ -1,4 +1,5 @@
-"jest": {	"collectCoverage":true
+"jest": {
+  "collectCoverage":true
   "collectCoverageFrom": [	
     "**/*.{js,jsx}",	
     "!**/node_modules/**",	
@@ -9,4 +10,3 @@
     "text"	
   ]	
 },	
-"collectCoverage":true
