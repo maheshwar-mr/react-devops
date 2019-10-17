@@ -66,16 +66,6 @@
     "enzyme-adapter-react-16": "latest",
     "eslint": "^5.16.0",
     "eslint-plugin-react": "latest"
-  },
-  "jest": {
-    "collectCoverageFrom": [
-      "src/*.{js,jsx}",
-      "!**/node_modules/**",
-      "!build/**"
-      ],
-    "coverageReporters":[
-      "lcov",
-      "text"
-      ]
   }
+ 
 }
