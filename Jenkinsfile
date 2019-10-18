@@ -32,12 +32,12 @@ pipeline {
                withCredentials([usernamePassword(credentialsId:'Nexus_Credentials',usernameVariable:'username',passwordVariable:'password')]){
                sh 'curl -v -u $username:$password --upload-file $BUILD_NUMBER.zip http://18.224.155.110:8081/nexus/content/repositories/devopstraining/hexagon6/'
                 }
-               sh 'rm -r $BUILD_NUMBER.zip' 
             }
         }
         stage('Deploy to Ansible'){
             steps{
                 sh 'scp -i ~/.ssh/id_rsa.pub /var/lib/jenkins/workspace/React_Pipeline/$BUILD_NUMBER.zip ansadmin@172.31.20.16:/home/ansadmin'
+                sh 'rm -r $BUILD_NUMBER.zip'
             }
         }
       /*stage('Serve') {
