@@ -56,6 +56,7 @@
     "jenkins-mocha": "latest",
     "mocha": "latest",
     "@babel/plugin-proposal-class-properties": "latest",
+    "@babel/plugin-transform-modules-commonjs":"latest",
     "babel-jest": "latest",
     "jest": "24.7.1",
     "nyc": "latest",
