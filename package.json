@@ -68,11 +68,10 @@
     "eslint-plugin-react": "latest"
   },
   "jest": {
-    "collectCoverageFrom": [
-      "src/**/*.{js,jsx,ts,tsx}",
-      "!<rootDir>/node_modules/",
-      "!src/index.js"
-    ],
+    "collectCoverage":true,
+    "collectCoverageOnlyFrom":{
+      "src/ViewBook.js":true
+    },
     "coverageThreshold": {
       "global": {
         "branches": 2,
