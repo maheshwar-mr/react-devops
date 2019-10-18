@@ -6,7 +6,7 @@ pipeline {
             steps {
                 sh 'npm install'
             }
-        }
+        }*/
          stage('Build') {
             steps {
                 sh 'npm run build'
@@ -24,7 +24,7 @@ pipeline {
                     waitForQualityGate abortPipeline:true
                 }
             }
-        }*/
+        }
         stage('Artifact Upload'){
             steps{
                sh 'cd /var/lib/jenkins/workspace/React_Pipeline/'
