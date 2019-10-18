@@ -69,7 +69,7 @@
   },
   "jest": {
     "collectCoverage":true,
-    "collectCoverageOnlyFrom":{
+    "collectCoverageFrom":{
       "src/ViewBook.js":true
     },
     "coverageThreshold": {
