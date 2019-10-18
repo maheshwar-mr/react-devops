@@ -20,7 +20,10 @@ pipeline {
         }
          stage('Sonar Analysis'){
             steps{
+                withEnv('SonarQube')
+                {
                 sh 'sonar:sonar'
+                }
             }
         }
         stage('Quality Gate'){
