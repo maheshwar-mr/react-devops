@@ -18,6 +18,11 @@ pipeline {
                 sh 'npm run test:coverage'
             }
         }
+         stage('Sonar Analysis'){
+            steps{
+                sh 'sonar:sonar'
+            }
+        }
         stage('Quality Gate'){
             steps{
                 timeout(time: 1, unit: 'HOURS'){
