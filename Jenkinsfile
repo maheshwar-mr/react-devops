@@ -15,7 +15,7 @@ pipeline {
         }
         stage('Test'){
             steps{
-                sh 'npm run test:coverage'
+                sh 'npm run test'
             }
         }
          stage('Sonar Analysis'){
@@ -26,7 +26,7 @@ pipeline {
         stage('Quality Gate'){
             steps{
                 timeout(time: 1, unit: 'HOURS'){
-                    waitForQualityGate abortPipeline:true
+                    waitForQualityGate abortPipeline:false
                 }
             }
         }
