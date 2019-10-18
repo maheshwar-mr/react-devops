@@ -68,7 +68,6 @@
     "eslint-plugin-react": "latest"
   },
   "jest": {
-    "collectCoverage":true,
     "collectCoverageFrom":{
       "src/ViewBook.js":true
     },
