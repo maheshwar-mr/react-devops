@@ -27,7 +27,8 @@
     "build-serve": "json-server --watch ss.json --host 0.0.0.0 --port 3001 & serve -s build -l 3000",
     "eject": "react-scripts eject",
     "coverage": "react-scripts test --env=jsdom --coverage",
-    "test": "CI=true jest"
+    "test": "CI=true react-scripts test",
+    "test:coverage": "react-scripts test --watchAll --coverage"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -60,6 +61,7 @@
     "jest": "24.7.1",
     "nyc": "latest",
     "react-test-renderer": "latest",
+    "enzyme-to-json": "latest",
     "jest-junit": "latest",
     "enzyme": "latest",
     "enzyme-adapter-react-16": "latest",
@@ -67,12 +69,26 @@
     "eslint-plugin-react": "latest"
   },
   "jest": {
-    "verbose": true,
-    "coverageReporters": ["json", "lcov", "text", "clover"],
     "collectCoverageFrom": [
-    "**/*.{js,jsx}",
-    "!**/node_modules/**",
-    "!**/vendor/**"]    
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!<rootDir>/node_modules/",
+      "!src/index.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 80,
+        "lines": 80,
+        "statements": 80
+      }
+    },
+    "coverageReporters": [
+      "json-summary",
+      "text"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
   }
  
 }
