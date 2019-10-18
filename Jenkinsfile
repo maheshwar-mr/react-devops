@@ -2,7 +2,7 @@ pipeline {
     agent any
     tools {nodejs "Books"}
     stages {
-     stage('Install Node Modules') {
+     /*stage('Install Node Modules') {
             steps {
                 sh 'npm install'
             }
@@ -24,7 +24,7 @@ pipeline {
                     waitForQualityGate abortPipeline:true
                 }
             }
-        }
+        }*/
         stage('Artifact Upload'){
             steps{
                sh 'cd /var/lib/jenkins/workspace/React_Pipeline/'
