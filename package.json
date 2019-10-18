@@ -70,9 +70,8 @@
   },
   "jest": {
     "collectCoverageFrom": [
-      "src/**/*.{js,jsx,ts,tsx}",
-      "!<rootDir>/node_modules/",
-      "!src/index.tsx"
+      "src/**/*.{js,jsx}",
+      "!<rootDir>/node_modules/"
     ],
     "coverageThreshold": {
       "global": {
@@ -85,9 +84,6 @@
     "coverageReporters": [
       "html",
       "text"
-    ],
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
     ]
   }
  
