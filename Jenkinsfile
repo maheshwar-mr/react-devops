@@ -24,7 +24,9 @@ pipeline {
             }
         }
         stage('Deploy to Ansible'){
-            sh 'scp /var/lib/jenkins/workspace/React_Pipeline ansadmin@172.31.20.16:/opt'
+            steps{
+                sh 'scp /var/lib/jenkins/workspace/React_Pipeline ansadmin@172.31.20.16:/opt'
+            }
         }
       /*stage('Serve') {
             steps {
