@@ -29,7 +29,7 @@ module.exports = {
         // See https://github.com/facebook/jest/issues/6913#issuecomment-421618932.
         '@babel/plugin-transform-modules-commonjs',
         '@babel/plugin-proposal-class-properties',
-      ],
-    },
-  },
-};
+      ]
+    }
+  }
+}
