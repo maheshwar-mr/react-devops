@@ -37,7 +37,7 @@ pipeline {
         }
         stage('Deploy to Ansible'){
             steps{
-                sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/React_Pipeline/$BUILD_NUMBER.zip ansadmin@172.31.20.16:/home/ansadmin/'
+                sh 'scp /var/lib/jenkins/workspace/React_Pipeline/$BUILD_NUMBER.zip ansadmin@172.31.20.16:~/'
             }
         }
       /*stage('Serve') {
