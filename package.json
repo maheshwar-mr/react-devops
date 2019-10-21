@@ -26,7 +26,7 @@
     "json-serve": "json-server --watch ss.json --host 0.0.0.0 --port 3001",
     "build-serve": "json-server --watch ss.json --host 0.0.0.0 --port 3001 & serve -s build -l 3000",
     "eject": "react-scripts eject",
-    "test": "cross-env NODE_ENV=test nyc --reporter=lcov --reporter=text mocha --timeout 5000 src/tests/App.test.js",
+    "test": "NODE_ENV=test nyc --reporter=lcov --reporter=text mocha --timeout 5000 src/tests/App.test.js",
     "coverage": "nyc --reporter html --reporter text npm test"
   },
   "eslintConfig": {
