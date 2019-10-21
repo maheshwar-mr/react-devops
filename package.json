@@ -76,11 +76,7 @@
         "functions":80,
         "statements":80
       }
-    },
-    "coverageReporters": [
-      "html",
-      "text"
-    ]
+    }
   }
  
 }
