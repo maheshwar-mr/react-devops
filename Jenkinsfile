@@ -29,19 +29,19 @@ pipeline {
             }
         }
         
-        stage('Quality Gate'){
+       /* stage('Quality Gate'){
             steps
             {
                 
-                /*
+                
                     when (waitForQualityGate.status != "OK") {
                     echo "Hello"
-                */
+                
                    timeout(time: 5, unit: 'SECONDS'){
                     waitForQualityGate abortPipeline:true
                 }
             }
-        }
+        }*/
         
         stage('Artifact Upload'){
             steps{
