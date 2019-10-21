@@ -31,7 +31,7 @@ pipeline {
                     waitForQualityGate abortPipeline:false
                 }
             }
-        }
+        }/*
         stage('Artifact Upload'){
             steps{
                sh 'cd /var/lib/jenkins/workspace/React_Pipeline/'
@@ -41,7 +41,7 @@ pipeline {
                 }
             }
         }
-        /*
+        
         stage('Deploy to Ansible'){
             steps{
                 sh 'scp -i ~/home/jenkins/.ssh/id_rsa.pub /var/lib/jenkins/workspace/React_Pipeline/$BUILD_NUMBER.zip ansadmin@172.31.20.16:/home/ansadmin'
