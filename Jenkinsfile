@@ -30,11 +30,11 @@ pipeline {
         }
         stage('Quality Gate'){
             steps{
-                timeout(time: 5, unit: 'SECONDS'){
+                
                     waitForQualityGate abortPipeline:true
-                }
+                
             }
-        }/*
+        }
         stage('Artifact Upload'){
             steps{
                sh 'cd /var/lib/jenkins/workspace/React_Pipeline/'
@@ -43,7 +43,7 @@ pipeline {
                sh 'curl -v -u $username:$password --upload-file $BUILD_NUMBER.zip http://18.224.155.110:8081/nexus/content/repositories/devopstraining/hexagon6/'
                 }
             }
-        }
+        }/*
         
         stage('Deploy to Ansible'){
             steps{
