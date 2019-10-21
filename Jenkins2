@@ -44,8 +44,11 @@ pipeline {
      
         stage('Deploy to Ansible'){
             steps{
-                sh 'scp -i .ssh/id_rsa.pub /var/lib/jenkins/workspace/React_Pipeline/$BUILD_NUMBER.zip ansadmin@172.31.20.16:/home/ansadmin'
-                sh 'rm -r $BUILD_NUMBER.zip'
+                sh 'cd /var/lib/jenkins/workspace/React_Pipeline/'
+                sh 'zip -r build.zip build/'
+                sh 'cd ~'
+                sh 'scp -i .ssh/id_rsa.pub /var/lib/jenkins/workspace/React_Pipeline/build.zip ansadmin@172.31.20.16:/home/ansadmin'
+                sh 'rm -r build.zip'
             }
         }
       
