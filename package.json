@@ -78,7 +78,8 @@
       }
     },
     "coverageReporters": [
-      "html"
+      "html",
+      "text"
     ]
   }
  
