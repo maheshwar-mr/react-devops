@@ -45,7 +45,7 @@ pipeline {
         stage('Deploy to Ansible'){
             steps{
             withCredentials([usernamePassword(credentialsId:'Ansible_cred',usernameVariable:'username1',passwordVariable:'password1')]){
-                sh 'sudo scp -i .ssh/id_rsa.pub /var/lib/jenkins/workspace/React_Pipeline/build.zip sudo -h -u $username1:$password1 ansadmin@172.31.20.16:/home/ansadmin'}
+                sh 'sudo -h -u $username1:$password1 scp -i .ssh/id_rsa.pub /var/lib/jenkins/workspace/React_Pipeline/build.zip ansadmin@172.31.20.16:/home/ansadmin'}
                 sh 'rm -r build.zip'
             }
         }
