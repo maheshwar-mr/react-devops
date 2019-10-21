@@ -28,14 +28,14 @@ pipeline {
                 }
             }
         }
-        stage('Quality Gate'){
+        /*stage('Quality Gate'){
             steps
             {
                    timeout(time: 5, unit: 'SECONDS'){
                     waitForQualityGate abortPipeline:false  
                 }
             }
-        }
+        }*/
         stage('Artifact Upload'){
             steps{
                sh 'cd /var/lib/jenkins/workspace/React_Pipeline/'
