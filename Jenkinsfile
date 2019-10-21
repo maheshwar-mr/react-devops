@@ -34,7 +34,7 @@ pipeline {
                 scripts
                 {
                     when (waitForQualityGate.status != "OK") {
-                    currentBuild.result = "SUCCESS"
+                    echo "Hello"
                 }
                    /*timeout(time: 5, unit: 'SECONDS'){
                     waitForQualityGate abortPipeline:false  */
