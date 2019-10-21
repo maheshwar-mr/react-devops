@@ -2,11 +2,11 @@ pipeline {
     agent any
     tools {nodejs "Books"}
     stages {
-     /*stage('Install Node Modules') {
+     stage('Install Node Modules') {
             steps {
                 sh 'npm install'
             }
-        }*/
+        }
          stage('Build') {
             steps {
                 sh 'npm run build'
