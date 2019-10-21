@@ -50,6 +50,7 @@
     "@babel/preset-react": "latest",
     "jenkins-mocha": "latest",
     "mocha": "latest",
+    "typescript":"latest",
     "@babel/plugin-proposal-class-properties": "latest",
     "@babel/plugin-transform-modules-commonjs":"latest",
     "babel-jest": "latest",
