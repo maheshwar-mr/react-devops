@@ -31,11 +31,11 @@ pipeline {
         stage('Quality Gate'){
             steps
             {
-                scripts
-                {
+                
+                
                     when (waitForQualityGate.status != "OK") {
                     echo "Hello"
-                }
+                
                    /*timeout(time: 5, unit: 'SECONDS'){
                     waitForQualityGate abortPipeline:false  */
                 }
