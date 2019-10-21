@@ -44,8 +44,8 @@ pipeline {
      
         stage('Deploy to Ansible'){
             steps{
-            sh 'sudo su -s /bin/bash jenkins'
-            sh 'cd ~/'
+            sh 'cd /var/lib/jenkins/workspace/React_Pipeline/'
+            sh 'zip -r build.zip build/'
             sshagent(credentials: ['jenkins-ci']) {
             sh 'sudo scp /var/lib/jenkins/workspace/React_Pipeline/build.zip ansadmin@172.31.20.16:/home/ansadmin'
             }
