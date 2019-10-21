@@ -30,12 +30,12 @@ pipeline {
         }
         stage('Quality Gate'){
             steps
-            
+            {
                    timeout(time: 30, unit: 'MINUTES'){
                     waitForQualityGate abortPipeline:true  
                 }
             }
-        
+        }
         stage('Artifact Upload'){
             steps{
                sh 'cd /var/lib/jenkins/workspace/React_Pipeline/'
