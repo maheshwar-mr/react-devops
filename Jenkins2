@@ -48,6 +48,8 @@ pipeline {
                 sh 'rm -r build.zip'
             }
         }
+        ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDVDQ2fzjeAb/W9dqsA5DPUgPnPvckCiTmI4uZULv92S3zkfxYZilZJZdRyDLWG68EN7ejfN9Ba4QQzTCT0tYgte42Ub4JdFUwTebcwJoMB0kup9yLnuCDMPrD+5Ich0LY1SE+nSYOTybokzw45OyooBNKmeDA8b85Y0O9fRnBOqA8MSdWfOop9WjUcCwegh5XJbge4Jmla7zQuyQ4kcO3ywfGSviChUD7wPHGvYPp1uJ1O9NKaazc4ULJzdSeazlfvstirD+Hf2iCqbngRO0oK/dLZ1j0hZM/oiliLKF0x3JNg72Yf7+2lKg2IJRrGJaeOwdbufHET1G/SBR3fhqAN jenkins@ip-172-31-39-37.us-east-2.compute.internal
+
       
       /*stage('Serve') {
             steps {
