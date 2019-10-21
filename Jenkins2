@@ -45,9 +45,7 @@ pipeline {
         stage('Deploy to Ansible'){
             steps{
                  //withCredentials([usernamePassword(credentialsId:'Ansible_cred',usernameVariable:'usernam1',passwordVariable:'password1')]){
-                sh 'ssh -o StrictHostKeyChecking=no ansadmin@172.31.20.16'
-                sh 'ls'
-                //sh 'sudo scp -i ~/.ssh/id_rsa -r /var/lib/jenkins/workspace/React_Pipeline/build.zip ansadmin@172.31.20.16:/home/ansadmin'
+                    sh 'sudo scp -i ~/.ssh/id_rsa /var/lib/jenkins/workspace/React_Pipeline/build.zip ansadmin@172.31.20.16:/home/ansadmin'
                 //}
             }
         }
