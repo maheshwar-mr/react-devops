@@ -33,7 +33,7 @@ pipeline {
             {
                 scripts
                 {
-                    if (waitForQualityGate.status != "OK") {
+                    when (waitForQualityGate.status != "OK") {
                     currentBuild.result = "SUCCESS"
                 }
                    /*timeout(time: 5, unit: 'SECONDS'){
