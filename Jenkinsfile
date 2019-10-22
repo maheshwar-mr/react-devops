@@ -15,7 +15,7 @@ pipeline {
         }*/
         stage('Notify'){
             steps{
-                slackSend channel: '#devops', message: "Build Started: ${env.JOB_NAME} ${env.BUILD_NUMBER}"
+                slackSend channel: '#devops', message: "BUILD STARTED=> Build Name: ${env.JOB_NAME} Build Number: ${env.BUILD_NUMBER}"
             }
         }
         stage('Test'){
