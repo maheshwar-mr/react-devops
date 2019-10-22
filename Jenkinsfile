@@ -13,7 +13,7 @@ pipeline {
                
             }
         }*/
-        stage('nOTIFY'){
+        stage('Notify'){
             steps{
                slackSend channel: '#devops', message: "BUILD STARTED=> Build Name: ${env.JOB_NAME} Build Number: ${env.BUILD_NUMBER}"
             }
@@ -54,7 +54,9 @@ pipeline {
                 }
             }
         }
-        post {
+        stage('Post Build')
+        {
+             post {
             success {
                 slackSend channel: '#devops', message: "BUILD SUCCESS=> Build Name: ${env.JOB_NAME} Build Number: ${env.BUILD_NUMBER}"
             }
@@ -62,6 +64,8 @@ pipeline {
                 slackSend channel: '#devops', message: "BUILD FAILURE=> Build Name: ${env.JOB_NAME} Build Number: ${env.BUILD_NUMBER}"
             } 
         }
+        }
+       
         
         /*
         
