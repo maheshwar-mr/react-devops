@@ -71,10 +71,10 @@ pipeline {
     }
     post{
             success{
-                slackSend channel: '#tempops', message: "BUILD SUCCESS"
+                slackSend channel: '#devops', message: "BUILD SUCCESS"
             }
             failure{
-                slackSend message: "BUILD FAILURE"
+                slackSend channel: '#devops', message: "BUILD FAILURE"
             }
         }
 }
