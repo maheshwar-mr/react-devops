@@ -41,7 +41,7 @@ pipeline {
             steps
             {
                    timeout(time: 59, unit: 'SECONDS'){
-                    waitForQualityGate abortPipeline:true
+                    waitForQualityGate abortPipeline:false
                 }
             }
         }
@@ -71,7 +71,7 @@ pipeline {
     }
     post{
             success{
-                slackSend channel: '#devops', message: "BUILD SUCCESS"
+                slackSend channel: '#tempops', message: "BUILD SUCCESS"
             }
             failure{
                 slackSend message: "BUILD FAILURE"
