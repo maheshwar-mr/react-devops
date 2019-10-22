@@ -19,38 +19,27 @@ pipeline {
             }
         }
          stage('Sonar Analysis'){
-            steps{
-                script {
+            steps
+            {
+                script 
+                {
              scannerHome = tool 'sonarScanner';
-                        }
-                 withSonarQubeEnv('SonarQube'){
+                }
+                withSonarQubeEnv('SonarQube')
+                {
                     sh "${scannerHome}/bin/sonar-scanner"
                 }
-              /* timeout(time: 5, unit: 'MINUTES') {
-                script {
-                    def qg = waitForQualityGate()
-                    if (qg.status != 'OK') {
-                        error "Pipeline aborted due to a quality gate failure: ${qg.status}"
-                    }
-                }
-            }*/
-            }
+             }
         }
-        /*
+        
        stage('Quality Gate'){
             steps
             {
-                
-                
-                    when (waitForQualityGate.status != "OK") {
-                    echo "Hello"
-                
-                   timeout(time: 5, unit: 'SECONDS'){
+                   timeout(time: 59, unit: 'SECONDS'){
                     waitForQualityGate abortPipeline:true
                 }
             }
         }
-        */
         stage('Artifact Upload'){
             steps{
                sh 'cd /var/lib/jenkins/workspace/React_Pipeline/'
