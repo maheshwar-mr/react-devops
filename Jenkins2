@@ -44,11 +44,10 @@ pipeline {
         stage('Deploy to Ansible'){
             steps{
                 //sh 'sudo scp -v -i /var/lib/jenkins/sshkey /var/lib/jenkins/workspace/AnsibleDeploy/build.zip ansadmin@172.31.20.16:/home/ansadmin/'
-               //withCredentials([usernamePassword(credentialsId:'Ansible_cred',usernameVariable:'username',passwordVariable:'password')]){
-                //sh 'sudo su -s /bin/bash jenkins'
+               //withCredentials([usernamePassword(credentialsId:'Ansible_cred',usernameVariable:'username',passwordVariable:'password')])
                 withCredentials([sshUserPrivateKey(credentialsId: 'react_deploy', keyFileVariable: 'deployment')]) {
-                sh 'sudo ssh -u $deployment'
-                sh 'sudo scp -v -i /var/lib/jenkins/workspace/AnsibleDeploy/build.zip ansadmin@172.31.20.16:/home/ansadmin/'
+               sh 'sudo scp -i $deployment'
+                sh 'sudo scp -v /var/lib/jenkins/workspace/AnsibleDeploy/build.zip ansadmin@172.31.20.16:/home/ansadmin/'
                 
                 
                 }
