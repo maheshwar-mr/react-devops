@@ -15,7 +15,7 @@ pipeline {
         stage('Deploy to Ansible'){
             steps{
                 sh 'scp -i /var/lib/jenkins/.ssh/id_rsa /var/lib/jenkins/workspace/react-pipeline/build.zip ansadmin@172.31.47.165:/react/'
-                //sh 'ssh -t -t -i /var/lib/jenkins/.ssh/id_rsa ansadmin@172.31.47.165 "unzip /react/build.zip /react/ && ansible-playbook /opt/playbooks/playfile.yml"'
+                sh 'ssh -t -t -i /var/lib/jenkins/.ssh/id_rsa ansadmin@172.31.47.165 "unzip /react/build.zip /react/ && ansible-playbook /opt/playbooks/playfile.yml"'
             }
         }
 
