@@ -56,7 +56,8 @@ pipeline {
         }
         stage('Post Build')
         {
-             post {
+            steps{
+                post {
             success {
                 slackSend channel: '#devops', message: "BUILD SUCCESS=> Build Name: ${env.JOB_NAME} Build Number: ${env.BUILD_NUMBER}"
             }
@@ -64,6 +65,7 @@ pipeline {
                 slackSend channel: '#devops', message: "BUILD FAILURE=> Build Name: ${env.JOB_NAME} Build Number: ${env.BUILD_NUMBER}"
             } 
         }
+            }
         }
        
         
