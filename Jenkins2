@@ -2,7 +2,7 @@ pipeline {
     agent any
     tools {nodejs "Books"}
     stages {
-     stage('Install Node Modules') {
+     /*stage('Install Node Modules') {
             steps {
                 sh 'npm install'
             }
@@ -13,7 +13,7 @@ pipeline {
                
             }
         }
-        /*stage('Test'){
+        stage('Test'){
             steps{
                 sh 'npm run test'
             }
