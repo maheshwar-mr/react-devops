@@ -44,7 +44,7 @@ pipeline {
         stage('Deploy to Ansible'){
             steps{
                //withCredentials([usernamePassword(credentialsId:'Ansible_cred',usernameVariable:'username',passwordVariable:'password')]){
-                    sh 'sudo scp -i /root/.ssh/id_rsa.pub /var/lib/jenkins/workspace/AnsibleDeploy/build.zip ansadmin@172.31.20.16:/home/ansadmin/'
+                    sh 'sudo scp -v -i /var/lib/jenkins/sshkey /var/lib/jenkins/workspace/AnsibleDeploy/build.zip ansadmin@172.31.20.16:/home/ansadmin/'
                 //sh 'ssh ansadmin@172.31.20.16'
                //}
             }
