@@ -13,11 +13,12 @@ pipeline {
                
             }
         }*/
-        
-        stage('Test'){
+        stage('nOTIFY'){
             steps{
-                slackSend channel: '#devops', message: "BUILD STARTED=> Build Name: ${env.JOB_NAME} Build Number: ${env.BUILD_NUMBER}"
+               slackSend channel: '#devops', message: "BUILD STARTED=> Build Name: ${env.JOB_NAME} Build Number: ${env.BUILD_NUMBER}"
             }
+        }
+        stage('Test'){
             steps{
                 sh 'npm run test'
             }
@@ -52,7 +53,17 @@ pipeline {
                sh 'curl -v -u $username:$password --upload-file $BUILD_NUMBER.zip http://18.224.155.110:8081/nexus/content/repositories/devopstraining/hexagon6/'
                 }
             }
-        }/*
+        }
+        post {
+            success {
+                slackSend channel: '#devops', message: "BUILD SUCCESS=> Build Name: ${env.JOB_NAME} Build Number: ${env.BUILD_NUMBER}"
+            }
+            failure {
+                slackSend channel: '#devops', message: "BUILD FAILURE=> Build Name: ${env.JOB_NAME} Build Number: ${env.BUILD_NUMBER}"
+            } 
+        }
+        
+        /*
         
         stage('Deploy to Ansible'){
             steps{
