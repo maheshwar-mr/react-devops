@@ -2,7 +2,7 @@ pipeline {
     agent any
     tools {nodejs "nodejs"}
     stages {
-     /*stage('Install Node Modules') {
+     stage('Install Node Modules') {
             steps {
                 sh 'npm install'
             }
@@ -11,10 +11,11 @@ pipeline {
             steps {
                 sh 'npm run build'               
             }
-        }*/
+        }
         stage('Deploy to Ansible'){
             steps{
-                sh 'scp -i /var/lib/jenkins/.ssh/id_rsa /var/lib/jenkins/workspace/React/build.zip ansadmin@172.31.47.165:/home/ansadmin'
+            sh 'zip build.zip build/'
+                sh 'scp -i /var/lib/jenkins/.ssh/id_rsa /var/lib/jenkins/workspace/react-pipeline/build.zip ansadmin@172.31.47.165:/home/ansadmin'
                 sh 'ssh -tt -i /var/lib/jenkins/.ssh/id_rsa ansadmin@172.31.47.165; ansible-playbook /opt/playbooks/playfile.yml'
             }
         }
