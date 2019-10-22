@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+    tools {nodejs "Books"}
+    stages {
+     /*stage('Install Node Modules') {
+            steps {
+                sh 'npm install'
+            }
+        }
+         stage('Build') {
+            steps {
+                sh 'npm run build'               
+            }
+        }*/
+     
+        stage('Deploy to Ansible'){
+            steps{
+               //withCredentials([usernamePassword(credentialsId:'Ansible_cred',usernameVariable:'username',passwordVariable:'password')]){
+                sh 'sudo scp -v -i -u $deployment /var/lib/jenkins/workspace/AnsibleDeploy/build.zip ansadmin@172.31.20.16:/home/ansadmin/'
+                //}
+            }
+        }
+
+    }
+}
