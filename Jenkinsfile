@@ -74,7 +74,7 @@ pipeline {
                 slackSend channel: '#devops', message: "BUILD SUCCESS"
             }
             failure{
-                slackSend channel: '#devops', message: "BUILD FAILURE"
+                slackSend message: "BUILD FAILURE"
             }
         }
 }
