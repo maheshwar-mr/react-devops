@@ -44,8 +44,8 @@ pipeline {
         stage('Deploy to Ansible'){
             steps{
                //withCredentials([usernamePassword(credentialsId:'Ansible_cred',usernameVariable:'username',passwordVariable:'password')]){
-                    //withCredentials([file(credentialsId: 'angular-react-deployment-server', variable: 'deployment_server')]) {
-                    sh 'sudo scp -v -i /var/lib/jenkins/sshkey /var/lib/jenkins/workspace/AnsibleDeploy/build.zip ansadmin@3.17.144.103:/home/ansadmin/'
+                    //withCredentials([file(credentialsId: 'react_deploy', variable: 'deployment')]) {
+                    sh 'sudo scp -v -i ${deployment} /var/lib/jenkins/workspace/AnsibleDeploy/build.zip ansadmin@3.17.144.103:/home/ansadmin/'
                 
                 //}
                //}
