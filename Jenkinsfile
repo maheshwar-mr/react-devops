@@ -76,5 +76,8 @@ pipeline {
             failure{
                 slackSend channel: '#devops', message: "BUILD FAILURE"
             }
+        always {
+           jiraSendBuildInfo site: 'hexagon6devops.atlassian.net'
+       }
         }
 }
