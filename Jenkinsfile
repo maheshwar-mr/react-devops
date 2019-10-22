@@ -15,6 +15,11 @@ pipeline {
         }*/
         stage('Test'){
             steps{
+                slackSend channel: '#devops', message: 'slackSend color: "#439FE0", message: "Build Started: ${env.JOB_NAME} ${env.BUILD_NUMBER}"'
+            }
+        }
+        stage('Test'){
+            steps{
                 sh 'npm run test'
             }
         }
