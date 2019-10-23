@@ -473,7 +473,7 @@ class ViewBook extends Component{
                             Villa No: 105, Concorde Cuppertino<br />
                             Neeladri Road, Elecronic City 1<br />
                             Bangalore, India<br />
-                            Mob.: +91-9790715854<br />
+                            Mob.: +91-7680016987<br />
                             Email: <a href="haary.richard@wipro.com">haary.richard@wipro.com</a>
                         </address>
                     </div>
