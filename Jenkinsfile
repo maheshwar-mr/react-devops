@@ -1,16 +1,10 @@
 pipeline {
     agent any
-    tools {nodejs "Books"}
+    tools {nodejs "nodejs"}
     stages {
     /* stage('Install Node Modules') {
             steps {
                 sh 'npm install'
-            }
-        }
-         stage('Build') {
-            steps {
-                sh 'npm run build'
-               
             }
         }*/
         stage('Notify'){
@@ -18,6 +12,12 @@ pipeline {
                slackSend channel: '#devops', message: "${env.JOB_NAME}, #${env.BUILD_NUMBER} started"
             }
         }
+          stage('Build') {
+            steps {
+                sh 'npm run build'  
+            }
+        }
+        
         stage('Test'){
             steps{
                 sh 'npm run test'
@@ -35,12 +35,11 @@ pipeline {
                     sh "${scannerHome}/bin/sonar-scanner"
                 }
              }
-        }
-        
+         }
        stage('Quality Gate'){
             steps
             {
-                   timeout(time: 59, unit: 'SECONDS'){
+                   timeout(time: 1, unit: 'MINUTE'){
                     waitForQualityGate abortPipeline:false
                 }
             }
@@ -54,22 +53,14 @@ pipeline {
                 }
             }
         }  
-        /*
-        
-        stage('Deploy to Ansible'){
+       stage('Deploy to Ansible'){
             steps{
-                sh 'scp -i ~/home/jenkins/.ssh/id_rsa.pub /var/lib/jenkins/workspace/React_Pipeline/$BUILD_NUMBER.zip ansadmin@172.31.20.16:/home/ansadmin'
-                sh 'rm -r $BUILD_NUMBER.zip'
+                sh 'scp -i /var/lib/jenkins/.ssh/id_rsa -r /var/lib/jenkins/workspace/react-pipeline/build/ ansadmin@172.31.47.165:/react'
+                sh 'ssh -t -t -i /var/lib/jenkins/.ssh/id_rsa ansadmin@172.31.47.165 "ansible-playbook /opt/playbooks/playfile.yml"'
             }
         }
-        */
-      /*stage('Serve') {
-            steps {
-                sh 'pm2 start npm -- run build-serve --watch'
-            }
-        }*/
     }
-    post{
+        post{
             success{
                 slackSend channel: '#devops', message: "BUILD SUCCESS"
             }
