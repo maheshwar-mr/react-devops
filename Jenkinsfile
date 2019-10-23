@@ -18,7 +18,7 @@ pipeline {
             }
         }*/
         
-        /*stage('Test'){
+        stage('Test'){
             steps{
                 sh 'npm run test'
             }
@@ -43,7 +43,7 @@ pipeline {
                     waitForQualityGate abortPipeline:false
                 }
             }
-        }*/
+        }
         stage('Artifact Upload'){
             steps{
                sh 'zip -r build$BUILD_NUMBER.zip build/'
