@@ -2,11 +2,11 @@ pipeline {
     agent any
     tools {nodejs "nodejs"}
     stages {
-    /* stage('Install Node Modules') {
+     stage('Install Node Modules') {
             steps {
                 sh 'npm install'
             }
-        }*/
+        }
         stage('Notify'){
             steps{
                slackSend channel: '#devops', message: "${env.JOB_NAME}, #${env.BUILD_NUMBER} started"
