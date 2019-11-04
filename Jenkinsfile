@@ -11,13 +11,13 @@ pipeline {
             steps{
                slackSend channel: '#devops', message: "${env.JOB_NAME}, #${env.BUILD_NUMBER} started"
             }
-        }
+        }*/
           stage('Build') {
             steps {
                 sh 'npm run build'  
             }
         }
-        
+        /*
         stage('Test'){
             steps{
                 sh 'npm run test'
