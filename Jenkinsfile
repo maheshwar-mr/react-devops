@@ -6,7 +6,7 @@ pipeline {
             steps {
                 sh 'npm install'
             }
-        }*/
+        }
         stage('Notify'){
             steps{
                slackSend channel: '#devops', message: "${env.JOB_NAME}, #${env.BUILD_NUMBER} started"
@@ -51,7 +51,7 @@ pipeline {
                sh 'curl -v -u $username:$password --upload-file build$BUILD_NUMBER.zip http://18.224.155.110:8081/nexus/content/repositories/devopstraining/hexagon6/'
                 }
             }
-        }  
+        }  */
        stage('Deploy to Ansible'){
             steps{
                 sh 'scp -i /var/lib/jenkins/.ssh/id_rsa -r /var/lib/jenkins/workspace/react-pipeline/build/ ansadmin@172.31.31.91:/react'
