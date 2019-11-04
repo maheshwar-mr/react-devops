@@ -2,21 +2,21 @@ pipeline {
     agent any
     tools {nodejs "nodejs"}
     stages {
-    /* stage('Install Node Modules') {
+     stage('Install Node Modules') {
             steps {
                 sh 'npm install'
             }
-        }*/
+        }
         stage('Notify'){
             steps{
                slackSend channel: '#devops', message: "${env.JOB_NAME}, #${env.BUILD_NUMBER} started"
             }
         }
-         /* stage('Build') {
+          stage('Build') {
             steps {
                 sh 'npm run build'  
             }
-        }*/
+        }
         
         stage('Test'){
             steps{
@@ -44,7 +44,7 @@ pipeline {
                 }
             }
         }
-        stage('Artifact Upload'){
+       /* stage('Artifact Upload'){
             steps{
                sh 'zip -r build$BUILD_NUMBER.zip build/'
                withCredentials([usernamePassword(credentialsId:'Nexus_Credentials',usernameVariable:'username',passwordVariable:'password')]){
@@ -57,7 +57,7 @@ pipeline {
                 sh 'scp -i /var/lib/jenkins/.ssh/id_rsa -r /var/lib/jenkins/workspace/react-pipeline/build/ ansadmin@172.31.47.165:/react'
                 sh 'ssh -t -t -i /var/lib/jenkins/.ssh/id_rsa ansadmin@172.31.47.165 "ansible-playbook /opt/playbooks/playfile.yml"'
             }
-        }
+        }*/
     }
         post{
             success{
