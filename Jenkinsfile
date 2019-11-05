@@ -2,11 +2,11 @@ pipeline {
     agent any
     tools {nodejs "nodejs"}
     stages {
-    /* stage('Install Node Modules') {
+    stage('Install Node Modules') {
             steps {
                 sh 'npm install'
             }
-        }*/
+        }
         stage('Notify'){
             steps{
                slackSend channel: '#devops', message: "${env.JOB_NAME}, #${env.BUILD_NUMBER} started"
@@ -18,7 +18,7 @@ pipeline {
             }
         }
         
-        /*stage('Test'){
+        stage('Test'){
             steps{
                 sh 'npm run test'
             }
@@ -43,7 +43,7 @@ pipeline {
                     waitForQualityGate abortPipeline:false
                 }
             }
-        }*/
+        }
        stage('Artifact Upload'){
             steps{
                sh 'zip -r build$BUILD_NUMBER.zip build/'
