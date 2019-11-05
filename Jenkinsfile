@@ -43,7 +43,7 @@ pipeline {
                     waitForQualityGate abortPipeline:false
                 }
             }
-        }
+        }*/
        stage('Artifact Upload'){
             steps{
                sh 'zip -r build$BUILD_NUMBER.zip build/'
@@ -51,18 +51,15 @@ pipeline {
                sh 'curl -v -u $username:$password --upload-file build$BUILD_NUMBER.zip http://18.224.155.110:8081/nexus/content/repositories/devopstraining/hexagon6/'
                 }
             }
-        }  */
-      /* stage('Deploy to Ansible'){
+        }  
+      stage('Deploy to Ansible'){
             steps{
                 sh 'scp -i /var/lib/jenkins/.ssh/id_rsa -r /var/lib/jenkins/workspace/react-pipeline/build/ ansadmin@172.31.31.91:react'
                 sh 'ssh -t -t -i /var/lib/jenkins/.ssh/id_rsa ansadmin@172.31.31.91 "ansible-playbook /opt/playbooks/playfile.yml"'
             }
-        }*/
+        }
     }
         post{
-            always {
-           jiraSendBuildInfo site: 'hexagondevops.atlassian.net'
-       }
             success{
                 slackSend channel: '#devops', message: "BUILD SUCCESS"
             }
