@@ -6,13 +6,13 @@ pipeline {
             steps {
                 sh 'npm install'
             }
-        }
+        }*/
         stage('Notify'){
             steps{
                slackSend channel: '#devops', message: "${env.JOB_NAME}, #${env.BUILD_NUMBER} started"
             }
         }
-          stage('Build') {
+         /* stage('Build') {
             steps {
                 sh 'npm run build'  
             }
