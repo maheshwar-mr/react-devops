@@ -61,7 +61,7 @@ pipeline {
     }
         post{
             always {
-           jiraSendBuildInfo branch: 'master', site: 'hexagondevops.atlassian.net'
+           jiraSendBuildInfo site: 'hexagondevops.atlassian.net'
        }
             success{
                 slackSend channel: '#devops', message: "BUILD SUCCESS"
