@@ -60,6 +60,9 @@ pipeline {
         }
     }
         post{
+            always {
+           jiraSendDeploymentInfo site: 'hexagondevops.atlassian.net', environmentId: 'us-prod-1', environmentName: 'us-prod-1', environmentType: 'production'
+       }
             success{
                 slackSend channel: '#devops', message: "BUILD SUCCESS"
             }
