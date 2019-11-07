@@ -6,7 +6,7 @@ pipeline {
          sendSplunkConsoleLog()
      }
     stages {
-    stage('Install Node Modules') {
+    /*stage('Install Node Modules') {
             steps {
                 sh 'npm install'
             }
@@ -26,7 +26,7 @@ pipeline {
             steps{
                 sh 'npm run test'
             }
-        }
+        }*/
          stage('Sonar Analysis'){
             steps
             {
