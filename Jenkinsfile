@@ -1,6 +1,10 @@
 pipeline {
     agent any
     tools {nodejs "nodejs"}
+    options {
+         timeout(time: 1, unit: 'HOURS')
+         sendSplunkConsoleLog()
+     }
     stages {
     stage('Install Node Modules') {
             steps {
