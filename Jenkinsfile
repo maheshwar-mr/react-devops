@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Notify'){
             steps{
-               slackSend channel: '#devops', message: "${env.JOB_NAME}, #${env.BUILD_NUMBER} started"
+               slackSend channel: '#react101', message: "${env.JOB_NAME}, #${env.BUILD_NUMBER} started"
             }
         }
           stage('Build') {
@@ -62,10 +62,10 @@ pipeline {
     }
         post{
             success{
-                slackSend channel: '#devops', message: "BUILD SUCCESS"
+                slackSend channel: '#react101', message: "BUILD SUCCESS"
             }
             failure{
-                slackSend channel: '#devops', message: "BUILD FAILURE"
+                slackSend channel: '#react101', message: "BUILD FAILURE"
             }
         }
 }
