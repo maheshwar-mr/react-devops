@@ -1,12 +1,8 @@
 pipeline {
     agent any
-    tools {nodejs "nodejs"}
-    options {
-         timeout(time: 1, unit: 'HOURS')
-         sendSplunkConsoleLog()
-     }
+    tools {nodejs "Books"}
     stages {
-    /*stage('Install Node Modules') {
+    stage('Install Node Modules') {
             steps {
                 sh 'npm install'
             }
@@ -26,7 +22,7 @@ pipeline {
             steps{
                 sh 'npm run test'
             }
-        }*/
+        }
          stage('Sonar Analysis'){
             steps
             {
