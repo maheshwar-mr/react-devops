@@ -7,11 +7,11 @@ pipeline {
                 sh 'npm install'
             }
         }
-        stage('Notify'){
+        /*stage('Notify'){
             steps{
                slackSend channel: '#devops', message: "${env.JOB_NAME}, #${env.BUILD_NUMBER} started"
             }
-        }
+        }*/
           stage('Build') {
             steps {
                 sh 'npm run build'  
@@ -60,12 +60,12 @@ pipeline {
             }
         }*/
     }
-        post{
+        /*post{
             success{
                 slackSend channel: '#devops', message: "BUILD SUCCESS"
             }
             failure{
                 slackSend channel: '#devops', message: "BUILD FAILURE"
             }
-        }
+        }*/
 }
