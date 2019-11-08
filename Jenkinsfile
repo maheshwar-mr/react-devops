@@ -55,8 +55,8 @@ pipeline {
         }  */
       stage('Deploy to Ansible'){
             steps{
-                sh 'scp -i /var/lib/jenkins/.ssh/id_rsa -r /var/lib/jenkins/workspace/react-pipeline/build/ ansi@3.133.83.50:react'
-                sh 'ssh -t -t -i /var/lib/jenkins/.ssh/id_rsa ansi@3.133.83.50 "ansible-playbook /home/ansi/sample.yml"'
+                sh 'scp -i /var/lib/jenkins/.ssh/id_rsa -r /var/lib/jenkins/workspace/react-pipeline/build/ ansi@172.31.45.163:react'
+                sh 'ssh -t -t -i /var/lib/jenkins/.ssh/id_rsa ansi@172.31.45.163 "ansible-playbook /home/ansi/sample.yml"'
             }
         }
     }
