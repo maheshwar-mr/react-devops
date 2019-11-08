@@ -48,7 +48,7 @@ pipeline {
             steps{
                sh 'zip -r build$BUILD_NUMBER.zip build/'
                withCredentials([usernamePassword(credentialsId:'Nexus_Credentials',usernameVariable:'username',passwordVariable:'password')]){
-                   sh 'curl -v -u $username:$password --upload-file build$BUILD_NUMBER.zip http://18.224.155.110:8081/nexus/content/repositories/devopstraining/hexagon6/'
+                   sh 'curl -v -u $username:$password --upload-file build$BUILD_NUMBER.zip http://18.224.155.110:8081/nexus/content/repositories/devopstraining/hexagon-war/'
                }
                 sh 'rm -r build$BUILD_NUMBER.zip'
             }
